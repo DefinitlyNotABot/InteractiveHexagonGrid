@@ -1,3 +1,11 @@
+:root {
+    --hex_size: 500px; /* Size of the hexahons */
+    --border_radius: 25%;
+    --glow_size: 15em;
+    --grid_height: 150vh;
+    --grid_width: 100vw;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +18,8 @@ body {
 }
 
 .container {
+    top: 0;
+    left:0;
     background: #2b2b2b;
     display: flex;
     justify-content: center;
@@ -19,19 +29,18 @@ body {
 }
 
 #hex-grid {
-    height: 100vh;
-    background: #000;
+    height: var(--grid_height);
+    width: var(--grid_width);
+    background: #ff0000;
 }
 
 #hex-grid .grid {
     position: absolute;
-    top: 0;
-    left: 0;
     background: url(./images/grid.svg)repeat;
-    width: 100%;
-    height: 100%;
+    width: var(--grid_width);
+    height: var(--grid_height);
     z-index: 0;
-    background-size: 500px;
+    background-size: var(--hex_size);
 }
 
 #hex-grid .light {
@@ -39,9 +48,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 15em;
-    height: 15em;
+    width: var(--glow_size);
+    height: var(--glow_size);
     filter: blur(15px);
     background: linear-gradient(90deg, #335bf4 0%, #2ae9c9 100%);
     z-index: 0;
+    border-radius: var(--border_radius);
 }
