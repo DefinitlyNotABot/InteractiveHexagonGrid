@@ -26,12 +26,13 @@ body {
     align-items: center;
     min-height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 
 #hex-grid {
     height: var(--grid_height);
     width: var(--grid_width);
-    background: #ff0000;
+    background: #000;
 }
 
 #hex-grid .grid {
